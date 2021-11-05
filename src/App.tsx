@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
 import Header from "./components/Header";
 import NewNote from "./components/NewNote";
 import NotesList from "./components/NotesList";

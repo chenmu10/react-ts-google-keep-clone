@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import Note from "./Note";
+import Note, { NoteInt } from "./Note";
 
 interface NotesListInt {
-  notes: [];
+  notes: NoteInt[];
 }
 
-const NotesList = (props: NotesListInt) => {
-  const [notes, setNotes] = useState([]);
+const NotesList = ({ notes }) => {
   return (
     <div>
-      {props.notes.map((note) => {
-        // <Note title={note.title} content={note.content} />
-      })}
+      {notes &&
+        notes.map((note) => {
+          return <Note title={note} />;
+        })}
     </div>
   );
 };

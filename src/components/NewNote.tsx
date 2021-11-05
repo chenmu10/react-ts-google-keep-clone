@@ -1,26 +1,33 @@
 import React from "react";
-import "./NewNote.css";
+import "./common-styles/NewNote.css";
+import NotesList from "./NotesList";
 
 const NewNote = () => {
+  // const []
+  const [notes, setNotes] = React.useState<String>([]);
+  const [text, setText] = React.useState("");
   function addNewNote() {
-    // @ts-ignore
-    const noteText = document.querySelector("input").value;
-    const div = document.createElement("div");
-    div.innerText = noteText;
-    const noteList = document.querySelector(".note-list");
-    // @ts-ignore
-    noteList.appendChild(div);
+    setNotes([...notes, text]);
   }
-
+  console.log(notes);
   return (
     <div>
       <div className="new-note-container">
-        <input type="text" placeholder="Take a note..." />
+        <input
+          type="text"
+          placeholder="Take a note..."
+          onChange={(e) => {
+            console.log(e.target.value);
+            setText(e.target.value);
+          }}
+        />
         <button className="add-note" onClick={addNewNote}>
           Add
         </button>
       </div>
-      <div className="note-list"></div>
+      <div className="note-list">
+        <NotesList notes={notes} />
+      </div>
     </div>
   );
 };

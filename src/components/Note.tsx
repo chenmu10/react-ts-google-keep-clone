@@ -1,6 +1,7 @@
 import React from "react";
 
 export interface NoteInt {
+  // named export
   title: string;
   content: string;
 }
@@ -18,4 +19,4 @@ const Note = (props: NoteInt) => {
   );
 };
 
-export default Note;
+export default Note; // default export
