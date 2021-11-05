@@ -1,0 +1,15 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border: gray 1px solid;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.search {
+  flex: 1;
+}
+
+img {
+  margin: 1px;
+}
